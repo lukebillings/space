@@ -1,0 +1,12 @@
+ <div class="companies_container">
+  <% @companies.each do |company| %>
+   <ul>
+     <li> <%= company.name %></li>
+     <li> from <%= company.starting_price %></li>
+     <li> <%= company.vehicle %></li>
+   </ul>
+   <% end %>
+ </div>
+
+
+
