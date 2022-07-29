@@ -1,0 +1,2 @@
+class CompanyDestination < ApplicationRecord
+end

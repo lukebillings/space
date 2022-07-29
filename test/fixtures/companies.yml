@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  starting_price: 1
+  vehicle: MyString
+
+two:
+  name: MyString
+  url: MyString
+  starting_price: 1
+  vehicle: MyString
