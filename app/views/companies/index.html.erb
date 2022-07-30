@@ -26,18 +26,20 @@
         <%= image_tag "stars.jpg", class: "w-screen h-40" %>
       </div>
       <div class="tags pt-2 pr-2 flex justify-end ...">
-        <button class="m-2 py-1 px-2 bg-cyan-200 text-cyan-600 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-          Space
-        </button>
         <button class="m-2 py-1 px-2 text-pink-600 bg-pink-200 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-          ISS
+          <%= company.destinations[0].name %>
+        </button>
+          <% if  company.destinations[1] != nil %>
+          <button class="m-2 py-1 px-2 text-pink-600 bg-pink-200 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+            <%= company.destinations[1].name %>
+          <% end %>
         </button>
       </div>
       <div class="info pt-5 pl-5 leading-10">
         <ul>
           <li> <%= company.name %></li>
           <li class="text-slate-600"> Vehicle: <%= company.vehicle %></li>
-          <li class="text-slate-600"> Starting from: $ <%= company.starting_price %></li>
+          <li class="text-slate-600"> Starting from: $<%= company.starting_price.to_s(:delimited)  %></li>
         </ul>
       </div>
    </div>
