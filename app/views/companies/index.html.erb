@@ -6,18 +6,11 @@
   </div>
 
 
-  <div class="ml-10 mt-10 mr-10 flex justify-end ...">
-    <button class="m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-      ＄Max Price
-    </button>
-  </div>
-
-
-
     <%= simple_form_for :filters, url: companies_index_path, method: :get do |f| %>
-      <div class="ml-10 mt-10 mr-10 flex justify-end ...">
+      <div class="ml-10 mt-10 mr-10 flex flex-wrap justify-end ...">
         <%= f.input :destination, as: :select, label: false, collection:  Destination.all, include_blank: "💫 Destination", value_method: :id, onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :destination)%>
         <%= f.input :vehicle, as: :select, label: false, collection:  ['Baloon', 'Plane', 'Rocket'], include_blank: "🛸 Vehicle", onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :vehicle)%>
+        <%= f.input :price, as: :select, label: false, collection:  ["<$0.5M", "<$1M", "$10M", "$100M" ], include_blank: "＄Max Price", onchange: "this.form.submit()", input_html: { class: "category-tag-filter filter-2 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :price) %>
         <%= f.submit "Apply filter", class: "btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" %>
       </div>
     <% end %>
