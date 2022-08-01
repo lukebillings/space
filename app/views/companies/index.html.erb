@@ -6,9 +6,6 @@
   </div>
   <div class="ml-10 mt-10 mr-10 flex justify-end ...">
     <button class="m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-     💫 Destinations
-    </button>
-    <button class="m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
       🛸 Vehicle
     </button>
     <button class="m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
@@ -17,6 +14,17 @@
   </div>
 
 </div>
+
+
+
+<%= simple_form_for :filters, url: companies_index_path, method: :get do |f| %>
+  <div class="filter">
+    <%= f.input :destination, as: :select, label: false, collection:  Destination.all, include_blank: "💫 Destination", value_method: :id, onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :destination)%>
+    <%= f.submit "Apply filter", class: "btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" %>
+  </div>
+<% end %>
+
+
 
 
   <div class="flex flex-wrap mt-10 mr-10 ml-10 justify-around">
