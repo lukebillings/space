@@ -11,6 +11,9 @@ class CompaniesController < ApplicationController
          max_price = params[:filters][:price].split("$")[1].split("M")[0].to_f
          @companies = @companies.select { |company| company.starting_price < max_price * 1000000 }
        end
-       console
+  end
+  def show
+    @company = Company.find(params[:id])
+    @destinations = @company.destinations
   end
 end
