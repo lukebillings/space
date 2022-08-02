@@ -8,8 +8,9 @@ class CompaniesController < ApplicationController
           @companies = @companies.select { |company| company.vehicle ==  params[:filters][:vehicle]}
         end
       if params.dig(:filters, :price).present? && params.dig(:filters, :price) != 0
-         max_price = params[:filters][:price].split("$")[1].to_i
+         max_price = params[:filters][:price].split("$")[1].split("M")[0].to_f
          @companies = @companies.select { |company| company.starting_price < max_price * 1000000 }
        end
+       console
   end
 end
