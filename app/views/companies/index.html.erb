@@ -24,6 +24,7 @@
 
   <div class="flex flex-wrap mt-10 mr-10 ml-10 justify-around">
    <% @companies.each do |company| %>
+   <%= link_to company_path(company.id) do %>
    <div class="company w-64 h-96 bg-slate-900 mx-2 mb-8 rounded-lg shadow-lg hover:shadow-gray-700">
       <div class="image">
         <%= image_tag "stars.jpg", class: "w-screen h-40" %>
@@ -46,9 +47,10 @@
         </ul>
       </div>
    </div>
+   <% end %>
+
     <% end %>
   </div>
-
 
   <% if @companies.empty? %>
     <p class="text-center text-white">No trips found. Please try a different set of filters!</p>
