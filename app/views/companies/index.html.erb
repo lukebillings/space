@@ -29,7 +29,24 @@
    <%= link_to company_path(company.id) do %>
    <div class="company w-64 h-96 bg-slate-900 mx-2 mb-8 rounded-lg shadow-lg hover:shadow-gray-700">
       <div class="image">
+        <% if company.id == 1 %>
         <%= image_tag "stars.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 2 %>
+        <%= image_tag "clouds.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 3 %>
+        <%= image_tag "earth.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 4 %>
+        <%= image_tag "floating.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 5 %>
+        <%= image_tag "grey.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 6 %>
+        <%= image_tag "moon.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 7 %>
+        <%= image_tag "spacerocket.jpg", class: "w-screen h-40" %>
+        <% elsif company.id == 8 %>
+        <%= image_tag "blue.jpg", class: "w-screen h-40" %>
+        <% end %>
+
       </div>
       <div class="tags pt-2 pr-2 flex justify-end ...">
         <button class="m-2 py-1 px-2 text-pink-600 bg-pink-200 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
