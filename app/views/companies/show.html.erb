@@ -7,10 +7,26 @@
   <% end %>
 </div>
 
-<div class="flex flex-row" >
-  <div class="mt-20 mr-20 ml-20 text-white basis-1/2">
+<div class="flex flex-wrap" >
+  <div class="mt-20 mr-20 ml-20 text-white" style="width: 500px;">
     <div class="image">
-      <%= image_tag "stars.jpg", class: "w-80 h-40 rounded-lg" %>
+      <% if @company.id == 1 %>
+      <%= image_tag "stars.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 2 %>
+      <%= image_tag "clouds.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 3 %>
+      <%= image_tag "earth.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 4 %>
+      <%= image_tag "floating.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 5 %>
+      <%= image_tag "grey.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 6 %>
+      <%= image_tag "moon.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 7 %>
+      <%= image_tag "spacerocket.jpg", class: "w-screen h-40" %>
+      <% elsif @company.id == 8 %>
+      <%= image_tag "blue.jpg", class: "w-screen h-40" %>
+      <% end %>
     </div>
   <ul class="mt-10">
     <li> <%= @company.name %></li>
@@ -34,16 +50,16 @@
   </div>
 
 
-  <div class="mt-20 mr-20 ml-20 text-white basis-1/2">
+  <div class="mt-20 mr-20 ml-20 text-white">
     <div class="ready">
       <h1 class="mb-10">READY TO GO?</h1>
-      <%= link_to root_path, class: "mt-2 py-2 px-20 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" do %>
+      <%= link_to root_path, class: "mt-2 py-2 px-10 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" do %>
         RESERVE YOUR TRIP ->
       <% end %>
     </div>
     <div class="questions pt-10">
     <h1 class="mb-10">GOT QUESTIONS?</h1>
-    <%= link_to root_path, class: "py-2 px-20 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" do %>
+    <%= link_to root_path, class: "py-2 px-10 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" do %>
       Get it answered here ->
     <% end %>
     </div>
