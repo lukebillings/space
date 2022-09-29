@@ -25,6 +25,7 @@
 
   <div class="flex flex-wrap mt-10 mr-10 ml-10 justify-around">
    <% @company_destinations.each do |company_destination| %>
+    <%= link_to company_destination_path(company_destination.id) do %>
    <div class="company w-64 pb-4 bg-slate-900 mx-2 mb-8 rounded-lg shadow-lg hover:shadow-gray-700">
       <div class="image">
         <% if company_destination.id == 1 %>
@@ -62,6 +63,7 @@
         </ul>
       </div>
    </div>
+   <% end %>
 
     <% end %>
   </div>

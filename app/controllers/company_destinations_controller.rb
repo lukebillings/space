@@ -12,5 +12,8 @@ class CompanyDestinationsController < ApplicationController
          @company_destinations = @company_destinations.select { |company_destination| company_destination.company.starting_price < max_price * 1000000 }
        end
   end
+  def show
+    @company_destination = CompanyDestination.find(params[:id])
+  end
 end
 
