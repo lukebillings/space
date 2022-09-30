@@ -7,6 +7,11 @@
   <% end %>
 </div>
 
+<%= link_to company_destinations_path, class: "back_button text-white" do %>
+  <p class="ml-20 mt-10"> <- Back to spaceflights</p>
+<% end %>
+
+
 <div class="flex flex-wrap" >
   <div class="mt-20 mr-20 ml-20 text-white" style="width: 500px;">
     <div class="image">
@@ -16,9 +21,9 @@
     <li> <%= @company_destination.flight_name%> </li>
     <li> Company: <%= @company_destination.company.name%></li>
     <li> Vehicle: <%= @company_destination.vehicle %> </li>
-    <li> Next bookable flight:</li>
+    <li> Next bookable flight: <%= @company_destination.next_bookable_flight %></li>
     <li> Starting from: $ <%= @company_destination.price.to_s(:delimited) %></li>
-    <li> Distnace from Earth: <%= @company_destination.distance %> km</li>
+    <li> Distnace from Earth: <%= @company_destination.distance.to_s(:delimited) %> km</li>
     <li class="text-slate-600"> companyurl.com</li>
   </ul>
   <div class="intro border-t-2 pt-5 mt-5 ">

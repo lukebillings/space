@@ -20,12 +20,12 @@ companies = Company.create([{ name: 'Space Views' },
     { name: 'SpaceA' }])
 
 
-company_destinations = CompanyDestination.create([{ flight_name: "Flight 1",company_id: 1, destination_id: 1, price: 250_000, vehicle: 'Baloon', distance: 50 },
-{ flight_name: "Flight 2", company_id: 2, destination_id: 1, price: 56_000_000, vehicle: 'Plane', distance: 50 },
-{ flight_name: "Flight 3", company_id: 3, destination_id: 2, price: 110_000_000, vehicle: 'Rocket', distance: 85 },
-{ flight_name: "Flight 4", company_id: 4, destination_id: 2, price: 30_000_000, vehicle: 'Rocket', distance: 85 },
-{ flight_name: "Flight 5", company_id: 5, destination_id: 3, price: 300_000, vehicle: 'Rocket', distance: 700 },
-{ flight_name: "Flight 6", company_id: 6, destination_id: 3, price: 100_000, vehicle: 'Baloon', distance: 700 },
-{ flight_name: "Flight 7", company_id: 7, destination_id: 4, price: 100_000, vehicle: 'Baloon', distance: 500  },
-{ flight_name: "Flight 8", company_id: 8, destination_id: 5, price: 100_000, vehicle: 'Rocket', distance: 500_000 },
-{ flight_name: "Flight 9", company_id: 9, destination_id: 6, price: 100_000_000, vehicle: 'Rocket', distance: 400_000_000 }])
+company_destinations = CompanyDestination.create([{ flight_name: "Flight 1",company_id: 1, destination_id: 1, price: 100_000, vehicle: 'Baloon', distance: 50, next_bookable_flight: 2022 },
+{ flight_name: "Flight 2", company_id: 2, destination_id: 1, price: 120_000, vehicle: 'Plane', distance: 50, next_bookable_flight: 2024 },
+{ flight_name: "Flight 3", company_id: 3, destination_id: 2, price: 300_000, vehicle: 'Rocket', distance: 85, next_bookable_flight: 2025 },
+{ flight_name: "Flight 4", company_id: 4, destination_id: 2, price: 400_000, vehicle: 'Rocket', distance: 85, next_bookable_flight: 2026 },
+{ flight_name: "Flight 5", company_id: 5, destination_id: 3, price: 700_000, vehicle: 'Rocket', distance: 700, next_bookable_flight: 2022 },
+{ flight_name: "Flight 6", company_id: 6, destination_id: 3, price: 1_000_000, vehicle: 'Baloon', distance: 700, next_bookable_flight: 2023 },
+{ flight_name: "Flight 7", company_id: 7, destination_id: 4, price: 2_000_000, vehicle: 'Baloon', distance: 500, next_bookable_flight: 2025  },
+{ flight_name: "Flight 8", company_id: 8, destination_id: 5, price: 10_000_000, vehicle: 'Rocket', distance: 500_000, next_bookable_flight: 2026 },
+{ flight_name: "Flight 9", company_id: 8, destination_id: 6, price: 100_000_000, vehicle: 'Rocket', distance: 400_000_000, next_bookable_flight: 2024 }])

@@ -54,7 +54,7 @@
           <li> <%= company_destination.flight_name %></li>
           <li class="text-slate-600">Company: <%= company_destination.company.name %></li>
           <li class="text-slate-600"> Vehicle: <%= company_destination.vehicle %></li>
-          <li class="text-slate-600"> Next bookable flight: 2022</li>
+          <li class="text-slate-600"> Next bookable flight: <%= company_destination.next_bookable_flight %></li>
           <li class="text-slate-600"> Starting from: $<%= company_destination.price.to_s(:delimited)  %></li>
         </ul>
       </div>
