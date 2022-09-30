@@ -13,12 +13,13 @@
       <%= image_tag "stars.jpg", class: "w-screen h-40" %>
     </div>
   <ul class="mt-10">
-    <li>Flight Name:</li>
-    <li>Company:</li>
-    <li>Vehicle:</li>
-    <li>Next bookable flight:</li>
+    <li> <%= @company_destination.flight_name%> </li>
+    <li> Company: <%= @company_destination.company.name%></li>
+    <li> Vehicle: <%= @company_destination.vehicle %> </li>
+    <li> Next bookable flight:</li>
+    <li> Starting from: $ <%= @company_destination.price.to_s(:delimited) %></li>
+    <li> Distnace from Earth: <%= @company_destination.distance %> km</li>
     <li class="text-slate-600"> companyurl.com</li>
-    <li class="text-slate-600"> Starting from:</li>
   </ul>
   <div class="intro border-t-2 pt-5 mt-5 ">
     <h1 class="font-bold">FLIGHT INFO</h1><br>
