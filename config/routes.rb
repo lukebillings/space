@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   root to: 'pages#homepage'
   get '/info', to: 'pages#info'
   get '/pandt', to: 'pages#pandt'
+  get '/cookies', to: 'pages#cookies'
   get '/flights', to: 'company_destinations#index'
 end
