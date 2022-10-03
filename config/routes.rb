@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :company_destinations, only: [:index, :show]
   root to: 'pages#homepage'
   get '/info', to: 'pages#info'
+  get '/pandt', to: 'pages#pandt'
   get '/flights', to: 'company_destinations#index'
 end
