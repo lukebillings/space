@@ -1,6 +1,6 @@
 <div class="logo mt-10">
   <%= link_to root_path, class: "" do %>
-    <%= image_tag "logo.png", class: "w-24 h-24 ml-20" %>
+    <%= image_tag "logo.png", class: "w-24 h-24 ml-2 lg:ml-20" %>
   <% end %>
   <%= link_to info_path, class: "mt-6 m-2 py-2 px-4 text-purple-500 font-semibold rounded-lg shadow-md border-solid border-2 border-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 absolute right-10 top-10" do %>
     List your spaceflight
@@ -22,21 +22,21 @@
     </div>
   </div>
 </div>
-  <div class="explainer pt-20 flex flex-wrap justify-around mb-10 ml-10">
-  <div class="explainer_info text-white max-w-3xl mr-20 mb-10 w-50">
-    <div class="explainer_title text-3xl text-white font-bold pb-4 px-10">
-      What is Spaceflight Index?
-    </div>
-    <div class="explainer_text px-10" style="width: 400px;">
-      Spaceflight Index is a comparison site dedicated to spaceflights. <br><br>
+<div class="explainer pt-20 pb-20 flex flex-wrap justify-around px-4">
+<div class="explainer_info text-white">
+  <div class="explainer_title text-3xl text-white font-bold">
+    What is Spaceflight Index?
+  </div>
+  <div class="explainer_text pb-10" style="width: 400px;">
+    Spaceflight Index is a comparison site dedicated to spaceflights. <br><br>
 
-      No matter where you want to go in space, you can find it on Spaceflight Index. It's as simple as searching for a flight on Earth!
-    </div>
+    No matter where you want to go in space, you can find it on Spaceflight Index. It's as simple as searching for a flight on Earth!
   </div>
-  <div class="image">
-    <%= image_tag "stars.jpg", class: "w-500 h-40 mr-40" %>
-  </div>
-  </div>
+</div>
+<div class="image content-center">
+  <%= image_tag "stars.jpg", class: "h-40", style: "width:300px"%>
+</div>
+</div>
     </div>
   </div>
   <div class="steps_title explainer_title text-3xl text-white font-bold text-center pb-20">
