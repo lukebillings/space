@@ -19,11 +19,11 @@
     </div>
   <ul class="mt-10">
     <li> <%= @company_destination.flight_name%> </li>
-    <li> Company: <%= @company_destination.company.name%></li>
-    <li> Vehicle: <%= @company_destination.vehicle %> </li>
-    <li> Next bookable flight: <%= @company_destination.next_bookable_flight %></li>
-    <li> Starting from: $ <%= @company_destination.price.to_s(:delimited) %></li>
-    <li> Distance from Earth: <%= @company_destination.distance.to_s(:delimited) %> km</li>
+    <li class="text-slate-600"> Company: <%= @company_destination.company.name%></li>
+    <li class="text-slate-600"> Vehicle: <%= @company_destination.vehicle %> </li>
+    <li class="text-slate-600"> Next bookable flight: <%= @company_destination.next_bookable_flight %></li>
+    <li class="text-slate-600"> Starting from: $ <%= @company_destination.price.to_s(:delimited) %></li>
+    <li class="text-slate-600"> Distance from Earth: <%= @company_destination.distance.to_s(:delimited) %> km</li>
     <li class="text-slate-600"> companyurl.com</li>
   </ul>
   <div class="intro border-t-2 pt-5 mt-5 ">
@@ -41,15 +41,15 @@
   <div class="mt-20 ml-20 sm:mr-20 sm:ml-20 text-white">
     <div class="ready">
       <h1 class="mb-10">READY TO GO?</h1>
-      <%= link_to root_path, class: "mr-2 mt-2 py-2 px-10 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" do %>
+      <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
         RESERVE YOUR TRIP ->
-      <% end %>
+      </button>
     </div>
     <div class="questions pt-10">
     <h1 class="mb-10">GOT QUESTIONS?</h1>
-    <%= link_to root_path, class: "py-2 px-10 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" do %>
-      Get it answered here ->
-    <% end %>
+    <button class="px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      GET ANSWERES HERE ->
+    </button>
     </div>
   </div>
 </div>
