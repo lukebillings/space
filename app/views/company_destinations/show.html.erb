@@ -14,9 +14,27 @@
 
 <div class="flex flex-wrap" >
   <div class="mt-20 mr-20 ml-20 text-white" style="width: 500px;">
-    <div class="image">
-      <%= image_tag "stars.jpg", class: "w-screen h-40" %>
-    </div>
+      <div class="image h-72 w-86">
+     <% if @company_destination.id == 1 %>
+     <%= image_tag "baloon.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 2 %>
+     <%= image_tag "earth.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 3 %>
+     <%= image_tag "meso.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 4 %>
+     <%= image_tag "meteors.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 5 %>
+     <%= image_tag "aurora.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 6 %>
+     <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 7 %>
+     <%= image_tag "iss.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 8 %>
+     <%= image_tag "moon.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 9 %>
+     <%= image_tag "mars.jpg", class: "w-screen h-60" %>
+     <% end %>
+        </div>
   <ul class="mt-10">
     <li> <%= @company_destination.flight_name%> </li>
     <li class="text-slate-600"> Company: <%= @company_destination.company.name%></li>
