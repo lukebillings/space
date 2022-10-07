@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get '/info', to: 'pages#info'
   get '/pandt', to: 'pages#pandt'
   get '/cookies', to: 'pages#cookies'
-  get '/flights', to: 'company_destinations#index'
+  get '/flights', to: 'company_destinations#index', as: :flights
 end
