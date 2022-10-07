@@ -10,7 +10,7 @@
 <%= simple_form_for :filters, url: company_destinations_path, method: :get do |f| %>
       <div class="ml-10 mt-10 mr-10 flex flex-wrap justify-end ...">
         <%= f.input :destination, as: :select, label: false, collection:  Destination.all, include_blank: "💫 Destination", value_method: :id, onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :destination)%>
-        <%= f.input :vehicle, as: :select, label: false, collection:  ['Baloon', 'Plane', 'Rocket'], include_blank: "🛸 Vehicle", onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :vehicle)%>
+        <%= f.input :vehicle, as: :select, label: false, collection:  ['Balloon', 'Plane', 'Rocket'], include_blank: "🛸 Vehicle", onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :vehicle)%>
         <%= f.input :price, as: :select, label: false, collection:  ["<$0.5M", "<$1M", "<$10M", "<$100M" ], include_blank: "＄Max Price", onchange: "this.form.submit()", input_html: { class: "category-tag-filter filter-2 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :price) %>
         <%= f.submit "Apply filter", class: "btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500" %>
       </div>
@@ -51,10 +51,10 @@
       <div class="info pt-5 pl-5 leading-8 ">
         <ul>
           <li> <%= company_destination.flight_name %></li>
-          <li class="text-slate-600">Company: <%= company_destination.company.name %></li>
-          <li class="text-slate-600"> Vehicle: <%= company_destination.vehicle %></li>
-          <li class="text-slate-600"> Next bookable flight: <%= company_destination.next_bookable_flight %></li>
-          <li class="text-slate-600"> Starting from: $<%= company_destination.price.to_s(:delimited)  %></li>
+          <li class="text-slate-400">Company: <%= company_destination.company.name %></li>
+          <li class="text-slate-400"> Vehicle: <%= company_destination.vehicle %></li>
+          <li class="text-slate-400"> Next bookable flight: <%= company_destination.next_bookable_flight %></li>
+          <li class="text-slate-400"> Starting from: $<%= company_destination.price.to_s(:delimited)  %></li>
         </ul>
       </div>
    </div>
