@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="033a729c-2bf5-4cfc-b839-d7108c9134fb" data-blockingmode="auto" type="text/javascript"></script>
+
+
     <title>Spaceflight Index</title>
-    <!-- <link rel="shortcut icon" type="image/jpg" href="images/logo.png"/> -->
     <%= favicon_link_tag %>
+
+
+    <!-- Google Consent Mode -->
+    <script data-cookieconsent="ignore">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+        wait_for_update: 500
+      });
+      gtag("set", "ads_data_redaction", true);
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script data-cookieconsent="ignore" async src="https://www.googletagmanager.com/gtag/js?id=G-VSBQJ2C7X9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VSBQJ2C7X9');
+    </script>
+
+
+<!--     Cookiebot CMP -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="033a729c-2bf5-4cfc-b839-d7108c9134fb" data-blockingmode="auto" type="text/javascript"></script>
+<!-- End cookiebot CMP -->
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -32,17 +68,6 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
-
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSBQJ2C7X9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VSBQJ2C7X9');
-    </script>
 
   </head>
 
