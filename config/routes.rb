@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # resources :companies, only: [:index, :show]
   resources :company_destinations, only: [:index, :show]
   root to: 'pages#homepage'
-  get '/info', to: 'pages#info'
+  get '/companies', to: 'pages#info'
   get '/pandt', to: 'pages#pandt'
   get '/cookies', to: 'pages#cookies'
   get '/flights', to: 'company_destinations#index', as: :flights
