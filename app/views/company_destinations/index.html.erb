@@ -27,7 +27,7 @@
         <% elsif company_destination.id == 2 %>
         <%= image_tag "earth.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 3 %>
-        <%= image_tag "meso.jpg", class: "w-screen h-40" %>
+        <%= image_tag "VGAL-flight.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 4 %>
         <%= image_tag "meteors.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 5 %>
@@ -42,8 +42,13 @@
         <%= image_tag "mars.jpg", class: "w-screen h-40" %>
         <% end %>
       </div>
-      <div class="tags pt-2 pr-2 flex justify-end ...">
-        <button class="m-2 py-1 px-2 text-pink-600 bg-pink-200 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      <div class="tags pt-2 pr-2 relative flex justify-end ...">
+        <div class="company_logo">
+          <% if company_destination.id == 3 %>
+          <%= image_tag "VGAL-logo.png", class: "" %>
+          <% end %>
+        </div>
+        <button class="m-2 ml-8 py-1 px-2 text-pink-600 bg-pink-200 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
           <%= company_destination.destination.name %>
         </button>
       </div>
