@@ -47,27 +47,55 @@
   </ul>
   <div class="intro border-t-2 pt-5 mt-5 ">
     <h1 class="font-bold">FLIGHT INFO</h1><br>
-    <p>Discover more detailed information about the flight here.</p>
+<!-- info about v gal -->
+<% if @company_destination.id == 3 %>
+  <%= render "shared/vgal" %>
+  <% else%>
+  <p>Discover more detailed information about the flight here.</p>
+<% end %>
   </div>
   <div class="intro border-t-2 pt-5 mt-5 ">
     <h1 class="font-bold">COMPANY INFO</h1><br>
-    <p>Find out more about the company operating the flight here.</p>
+    <% if @company_destination.id == 3 %>
+      Virgin Galactic company info
+      <% else%>
+      <p>Find out more about the company operating the flight here.</p>
+    <% end %>
   </div>
 
   </div>
 
 
-  <div class="mt-20 ml-20 sm:mr-20 sm:ml-20 text-white">
+  <div class="mt-20 ml-20 sm:mr-20 sm:ml-20 text-white style=" style=" float: right;
+    max-height: calc(100vh - 152px);
+    max-width: 448px;
+    overflow: hidden auto;
+    position: sticky;
+    top: 162px;">
     <div class="ready">
-      <h1 class="mb-10">READY TO GO?</h1>
-      <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-        RESERVE YOUR TRIP ->
+    <% if @company_destination.id == 3 %>
+    <% else %>
+    <h1 class="mb-10">READY TO GO?</h1>
+    <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      RESERVE YOUR TRIP ->
+    <% end %>
       </button>
     </div>
     <div class="questions pt-10">
-    <h1 class="mb-10">GOT QUESTIONS?</h1>
+    <h1 class="mb-10">
+    <% if @company_destination.id == 3 %>
+    INTERESTED IN THIS SPACEFLIGHT? <br><br>
+    SIGN UP TO RECIEVE UPDATES <br> DIRECTLY FROM VIRGIN GALACTIC
+    <% else %>
+    GOT QUESTIONS?
+    <% end %>
+    </h1>
     <button class="px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      <% if @company_destination.id == 3 %>
+      LEAVE YOUR DETAILS ->
+      <% else %>
       GET ANSWERS HERE ->
+      <% end %>
     </button>
     </div>
   </div>
