@@ -14,7 +14,7 @@
 
 
 <div class="flex flex-wrap" >
-  <div class="mt-20 mr-20 ml-20 text-white" style="width: 500px;">
+  <div class="mt-4 mr-20 ml-20 text-white" style="width: 500px;">
       <div class="image h-72 w-86">
      <% if @company_destination.id == 1 %>
      <%= image_tag "balloon.jpg", class: "w-screen h-60" %>
@@ -36,7 +36,7 @@
      <%= image_tag "mars.jpg", class: "w-screen h-60" %>
      <% end %>
         </div>
-  <ul class="mt-10">
+  <ul class="mt-12">
     <li> <%= @company_destination.flight_name%> </li>
     <li class="text-slate-400"> Company: <%= @company_destination.company.name%></li>
     <li class="text-slate-400"> Vehicle: <%= @company_destination.vehicle %> </li>
@@ -66,10 +66,9 @@
   </div>
 
 
-  <div class="mt-20 ml-20 sm:mr-20 sm:ml-20 text-white style=" style=" float: right;
+  <div class="mb-24 ml-20 sm:mr-20 sm:ml-20 text-white style=" style=" float: right;
     max-height: calc(100vh - 152px);
     max-width: 448px;
-    overflow: hidden auto;
     position: sticky;
     top: 162px;">
     <div class="ready">
@@ -81,22 +80,22 @@
     <% end %>
       </button>
     </div>
-    <div class="questions pt-10">
-    <h1 class="mb-10 font-bold">
+    <div class="questions">
+    <h1 class="font-bold pb-6">
     <% if @company_destination.id == 3 %>
-    INTERESTED IN THIS SPACEFLIGHT? <br><br>
-    SIGN UP TO RECIEVE UPDATES <br> DIRECTLY FROM VIRGIN GALACTIC
+    HEAR BACK DIRECTLY FROM VIRGIN GALACTIC
     <% else %>
     GOT QUESTIONS?
     <% end %>
     </h1>
-    <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+<!--     <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
       <% if @company_destination.id == 3 %>
       LEAVE YOUR DETAILS ->
       <% else %>
       GET ANSWERS HERE ->
       <% end %>
-    </button>
+    </button> -->
+    <%= render "shared/form" %>
     </div>
   </div>
 </div>
