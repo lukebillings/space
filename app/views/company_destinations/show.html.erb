@@ -23,16 +23,20 @@
      <% elsif @company_destination.id == 3 %>
      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 4 %>
-     <%= image_tag "meteors.jpg", class: "w-screen h-60" %>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 5 %>
-     <%= image_tag "aurora.jpg", class: "w-screen h-60" %>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 6 %>
-     <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
+     <%= image_tag "meteors.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 7 %>
-     <%= image_tag "iss.jpg", class: "w-screen h-60" %>
+     <%= image_tag "aurora.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 8 %>
-     <%= image_tag "moon.jpg", class: "w-screen h-60" %>
+     <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 9 %>
+     <%= image_tag "iss.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 10 %>
+     <%= image_tag "moon.jpg", class: "w-screen h-60" %>
+     <% elsif @company_destination.id == 11 %>
      <%= image_tag "mars.jpg", class: "w-screen h-60" %>
      <% end %>
         </div>
@@ -40,7 +44,7 @@
     <li> <%= @company_destination.flight_name%> </li>
     <li class="text-slate-400"> Company: <%= @company_destination.company.name%></li>
     <li class="text-slate-400"> Vehicle: <%= @company_destination.vehicle %> </li>
-    <li class="text-slate-400"> Next bookable flight: <%= @company_destination.next_bookable_flight %></li>
+    <li class="text-slate-400"> Scheduled Departure: <%= @company_destination.next_bookable_flight %></li>
     <li class="text-slate-400"> Starting from: $<%= @company_destination.price.to_s(:delimited) %></li>
     <li class="text-slate-400"> Distance from Earth: <%= @company_destination.distance.to_s(:delimited)%>km</li>
   </ul>
@@ -57,7 +61,7 @@
   <div class="intro border-t-2 pt-5 mt-5 ">
     <h1 class="font-bold">COMPANY INFO</h1><br>
     <% if @company_destination.id == 3 %>
-      Virgin Galactic company info
+      <%= render "shared/vgalinfo" %>
       <% else%>
       <p>Find out more about the company operating the flight here.</p>
     <% end %>
@@ -72,7 +76,7 @@
     position: sticky;
     top: 162px;">
     <div class="ready">
-    <% if @company_destination.id == 3 %>
+    <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
     <% else %>
     <h1 class="mb-10">READY TO GO?</h1>
     <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
@@ -82,8 +86,9 @@
     </div>
     <div class="questions">
     <h1 class="font-bold pb-6">
-    <% if @company_destination.id == 3 %>
-    HEAR BACK DIRECTLY FROM VIRGIN GALACTIC
+    <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
+      INTERESTED IN THIS FLIGHT? <br>
+      SIGN UP FOR MORE INFORMATION
     <% else %>
     GOT QUESTIONS?
     <% end %>
