@@ -1,3 +1,3 @@
 class Lead < ApplicationRecord
-  belongs_to :company_destinations
+  belongs_to :company_destination
 end
