@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_30_142740) do
+ActiveRecord::Schema.define(version: 2023_03_23_133740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 2022_09_30_142740) do
     t.integer "next_bookable_flight"
     t.string "flight_name"
     t.string "vehicle"
+    t.bigint "lead_id"
     t.index ["company_id"], name: "index_company_destinations_on_company_id"
     t.index ["destination_id"], name: "index_company_destinations_on_destination_id"
+    t.index ["lead_id"], name: "index_company_destinations_on_lead_id"
   end
 
   create_table "destinations", force: :cascade do |t|
@@ -45,6 +47,17 @@ ActiveRecord::Schema.define(version: 2022_09_30_142740) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "leads", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.integer "date"
+    t.boolean "newsletter"
+    t.boolean "pptc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "company_destinations", "companies"
   add_foreign_key "company_destinations", "destinations"
+  add_foreign_key "company_destinations", "leads"
 end
