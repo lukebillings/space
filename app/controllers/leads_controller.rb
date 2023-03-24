@@ -1,24 +1,27 @@
 class LeadsController < ApplicationController
-  def new
-    @company_destination = CompanyDestination.find(params[:id])
-    @lead = Lead.new
-  end
+  before_action :set_company_destination
 
   def create
-    @company_destination = CompanyDestination.find(params[:id])
     @lead = Lead.new(lead_params)
     @lead.company_destination = @company_destination
+
     if @lead.save
-      flash[:notice] = "Thank you for your interest."
+      redirect_to company_destination_path(@company_destination, anchor: "lead-#{@lead.id}")
     else
-      flash[:notice] = "Session could not be booked!"
-      redirect_to sessions_path
+      render :new
     end
   end
 
 
-    def lead_params
-      params.require(:lead).permit(:email, :name, :date, :newsletter, :pptc)
-    end
+  private
+
+  def set_company_destination
+    @company_destination = CompanyDestination.find(params[:company_destination_id])
+  end
+
+
+  def lead_params
+    params.require(:lead).permit(:email)
+  end
 
 end

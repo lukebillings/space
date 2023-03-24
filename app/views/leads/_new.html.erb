@@ -1,4 +1,4 @@
-        <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
+<!--         <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
           <form>
             <div class="form-group mb-2">
               <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-white-700">Email address</label>
@@ -90,10 +90,10 @@
               ease-in-out
               hover:bg-purple-800">Submit</button>
           </form>
-        </div>
+        </div> -->
 
 
-<div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
+<div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm text-black">
   <%= simple_form_for [@company_destination, @lead]  do |f| %>
     <%= f.input :email, :label => 'Your email please' %>
     <%= f.submit "Add",  class: "btn btn-primary mb-2"%>

@@ -17,4 +17,3 @@ class CompanyDestinationsController < ApplicationController
     @lead = Lead.new
   end
 end
-

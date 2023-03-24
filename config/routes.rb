@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'companies/index'
   # resources :companies, only: [:index, :show]
   resources :company_destinations, only: [:index, :show] do
-    resources :leads, only: [:new, :create]
+    resources :leads, only: [:create]
   end
   root to: 'pages#homepage'
   get '/companies', to: 'pages#info'
