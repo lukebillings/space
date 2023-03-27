@@ -1,9 +1,24 @@
-<!--         <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
-          <form>
+
+<!-- <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
+  <%= simple_form_for [@company_destination, @lead]  do |f| %>
+    <%= f.input :email, :label => 'Email address'%>
+    <%= f.input :name, :label => 'Full name' %>
+    <%= f.input :date, :label => 'What year would you like to go?' %>
+    <%= f.input :newsletter, :label => 'Yes please' %>
+    <%= f.input :pptc, :label => 'I agree' %>
+    <%= f.submit "Add",  class: "btn btn-primary mb-2"%>
+  <% end %>
+</div>
+ -->
+
+
+
+
+       <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
+        <%= simple_form_for [@company_destination, @lead]  do |f| %>
             <div class="form-group mb-2">
               <label for="exampleInputEmail1" class="form-label inline-block mb-2 text-white-700">Email address</label>
-              <input type="email" class="form-control
-                block
+                <%= f.input :email, label: false, input_html: { class: "form-input block
                 w-full
                 px-3
                 py-1
@@ -16,12 +31,11 @@
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail1"
-                aria-describedby="emailHelp" placeholder="Enter email">
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" }%>
             </div>
             <div class="form-group mb-2">
               <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Full name</label>
-              <input type="name" class="form-control block
+      <%= f.input :name, label: false, input_html: { class: "form-input block
                 w-full
                 px-3
                 py-1
@@ -34,12 +48,11 @@
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputPassword1"
-                placeholder="Enter name">
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" } %>
             </div>
             <div class="form-group mb-2">
-              <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">When would you like to go?</label>
-              <input type="name" class="form-control block
+              <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">What year would you like to go?</label>
+  <%= f.input :date, label: false, input_html: { class: "form-input block
                 w-full
                 px-3
                 py-1
@@ -52,50 +65,35 @@
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputPassword1"
-                placeholder="Enter year">
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" }%>
             </div>
 
             <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Sign up for Saceflight Index Newsletter?</label>
             <div class="form-group form-check mb-2">
-              <input type="checkbox"
-                class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                id="exampleCheck1">
-              <label class="form-check-label inline-block text-gray-400" for="exampleCheck1">Yes please</label>
+              <%= f.input :newsletter, :label => 'Yes please', input_html: { class: "form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" }%>
             </div>
 
-            <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Please agree to Privacy Policy and Terms</label>
+            <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Please agree to <a href="https://spaceflightindex.com/pandt">Privacy Policy and Terms</a></label>
             <div class="form-group form-check mb-2">
-              <input type="checkbox"
-                class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                id="exampleCheck1">
-              <label class="form-check-label inline-block text-gray-400" for="exampleCheck1">I agree</label>
+              <%= f.input :pptc, :label => 'I agree', input_html: { class: "form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" } %>
             </div>
-            <button type="submit" class="
-              px-6
-              py-2.5
-              bg-purple-500
-              text-white
-              font-medium
-              text-xs
-              leading-tight
-              uppercase
-              rounded
-              shadow-md
-              hover:bg-blue-700 hover:shadow-lg
-              focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-              active:bg-blue-800 active:shadow-lg
-              transition
-              duration-150
-              ease-in-out
-              hover:bg-purple-800">Submit</button>
-          </form>
-        </div> -->
+            <%= f.submit "Submit",  class: "btn btn-primary mb-2 px-6
+        py-2.5
+        bg-purple-500
+        text-white
+        font-medium
+        text-xs
+        leading-tight
+        uppercase
+        rounded
+        shadow-md
+        hover:bg-purple-800 hover:shadow-lg
+        focus:bg-purple-800 focus:shadow-lg focus:outline-none focus:ring-0
+        active:bg-purple-800 active:shadow-lg
+        transition
+        duration-150
+        ease-in-out
+        hover:bg-purple-800"%>
+              <% end %>
+        </div>
 
-
-<div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm text-black">
-  <%= simple_form_for [@company_destination, @lead]  do |f| %>
-    <%= f.input :email, :label => 'Your email please' %>
-    <%= f.submit "Add",  class: "btn btn-primary mb-2"%>
-  <% end %>
-</div>
