@@ -6,7 +6,7 @@ class LeadsController < ApplicationController
     @lead.company_destination = @company_destination
 
     if @lead.save
-      redirect_to company_destination_path(@company_destination, anchor: "lead-#{@lead.id}")
+      redirect_to company_destination_path(@company_destination)
     else
       render :new
     end
