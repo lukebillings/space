@@ -69,7 +69,6 @@
 
   </div>
 
-
   <div class="mb-24 ml-20 sm:mr-20 sm:ml-20 text-white style=" style=" float: right;
     max-height: calc(100vh - 152px);
     max-width: 448px;
@@ -102,6 +101,11 @@
       <% end %>
     </button> -->
     <%= render "leads/new" %>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <p style="text-purple-500-400"><%= msg %></p>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

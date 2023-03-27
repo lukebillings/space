@@ -6,9 +6,11 @@ class LeadsController < ApplicationController
     @lead.company_destination = @company_destination
 
     if @lead.save
+      flash.alert = "Thank you for your interest!"
       redirect_to company_destination_path(@company_destination)
     else
-      render :new
+      flash.alert = "Please fill out all required fields!"
+      redirect_to company_destination_path(@company_destination)
     end
   end
 
