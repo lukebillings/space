@@ -19,24 +19,18 @@
      <% if @company_destination.id == 1 %>
      <%= image_tag "balloon.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 2 %>
-     <%= image_tag "earth.jpg", class: "w-screen h-60" %>
+     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 3 %>
      <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 4 %>
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>s
      <% elsif @company_destination.id == 5 %>
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-     <% elsif @company_destination.id == 6 %>
-     <%= image_tag "meteors.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 7 %>
-     <%= image_tag "aurora.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 8 %>
      <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 9 %>
+     <% elsif @company_destination.id == 6 %>
      <%= image_tag "iss.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 10 %>
+     <% elsif @company_destination.id == 7 %>
      <%= image_tag "moon.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 11 %>
+     <% elsif @company_destination.id == 8 %>
      <%= image_tag "mars.jpg", class: "w-screen h-60" %>
      <% end %>
         </div>
@@ -52,18 +46,18 @@
   <div class="intro border-t-2 pt-5 mt-5">
     <h1 class="font-bold">FLIGHT INFO</h1><br>
 <!-- info about v gal -->
-<% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5  %>
+<% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4  %>
   <%= render "shared/vgal" %>
   <% else%>
-  <p>Discover more detailed information about the flight here.</p>
+  <p>Please sign up to our Newsletter to recieve more information about flights to this destination and much more.</p>
 <% end %>
   </div>
   <div class="intro border-t-2 pt-5 mt-5 mb-5 ">
     <h1 class="font-bold">COMPANY INFO</h1><br>
-    <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
+    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
       <%= render "shared/vgalinfo" %>
       <% else%>
-      <p>Find out more about the company operating the flight here.</p>
+      <p>Please sign up to our Newsletter to recieve more information about companies flying to space.</p>
     <% end %>
   </div>
 
@@ -75,7 +69,7 @@
     position: sticky;
     top: 162px;">
     <div class="ready">
-    <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
+    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
     <% else %>
 <!--     <h1 class="mb-10">READY TO GO?</h1>
     <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
@@ -85,9 +79,10 @@
     </div>
     <div class="questions">
     <h1 class="font-bold pb-6">
-    <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
+    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
       INTERESTED IN THIS FLIGHT? <br>
-      SIGN UP FOR MORE INFORMATION
+      SIGN UP FOR MORE INFORMATION <br>
+      FROM VIRGIN GALACTIC
     <% else %>
       INTERESTED IN THIS FLIGHT? <br>
       SIGN UP FOR MORE INFORMATION

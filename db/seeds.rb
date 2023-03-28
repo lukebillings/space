@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+   # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -7,27 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-destinations = Destination.create([{ name: 'Stratosphere' }, { name: 'Mesosphere' }, { name: 'Thermosphere' }, { name: 'ISS' }, { name: 'Moon' }, { name: 'Mars' }])
+destinations = Destination.create([{ name: 'Stratosphere' }, { name: 'Thermosphere' }, { name: 'ISS' }, { name: 'Moon' }, { name: 'Mars' }])
 
 
-companies = Company.create([{ name: 'Space Views' },
-    { name: 'Galaxy Travel' },
+companies = Company.create([{ name: 'NA' },
+    { name: 'NA' },
     { name: 'Virgin Galactic' },
-    { name: 'Spacey' },
-    { name: 'Go Space' },
-    { name: 'Infinity Beyond' },
-    { name: 'View Space' },
-    { name: 'SpaceA' }])
+    { name: 'NA' },
+    { name: 'NA' },
+    { name: 'NA' },
+    { name: 'NA' },
+    { name: 'NA' }])
 
 
-company_destinations = CompanyDestination.create([{ flight_name: "Voyage 1",company_id: 1, destination_id: 1, price: 100_000, vehicle: 'Balloon', distance: 50, next_bookable_flight: 2022 },
-{ flight_name: "Earth View", company_id: 2, destination_id: 1, price: 120_000, vehicle: 'Balloon', distance: 50, next_bookable_flight: 2024 },
-{ flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 3, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2025},
-{ flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 3, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2026},
-{ flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 3, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2027},
-{ flight_name: "Space Journey", company_id: 4, destination_id: 2, price: 400_000, vehicle: 'Rocket', distance: 85, next_bookable_flight: 2026 },
-{ flight_name: "Beyond Earth", company_id: 5, destination_id: 3, price: 700_000, vehicle: 'Rocket', distance: 700, next_bookable_flight: 2022 },
-{ flight_name: "Orbital Cruise", company_id: 6, destination_id: 3, price: 1_000_000, vehicle: 'Rocket', distance: 700, next_bookable_flight: 2023 },
-{ flight_name: "ISS Voyage", company_id: 7, destination_id: 4, price: 2_000_000, vehicle: 'Rocket', distance: 500, next_bookable_flight: 2025  },
-{ flight_name: "Mission Moon", company_id: 8, destination_id: 5, price: 10_000_000, vehicle: 'Rocket', distance: 500_000, next_bookable_flight: 2026 },
-{ flight_name: "Mars Explorer", company_id: 8, destination_id: 6, price: 100_000_000, vehicle: 'Rocket', distance: 400_000_000, next_bookable_flight: 2024 }])
+company_destinations = CompanyDestination.create([{ flight_name: "Stratosphere spaceflight",company_id: 1, destination_id: 1, price: 45_000, vehicle: 'Balloon', distance: 45, next_bookable_flight: 2024 },
+{ flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 2, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2025},
+{ flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 2, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2026},
+{ flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 2, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2027},
+{ flight_name: "Sub-orbital spaceflight", company_id: 6, destination_id: 2, price: 1300_000, vehicle: 'Rocket', distance: 110, next_bookable_flight: 2024 },
+{ flight_name: "ISS spaceflight", company_id: 7, destination_id: 3, price: 45_000_000, vehicle: 'Rocket', distance: 408, next_bookable_flight: 2024  },
+{ flight_name: "Moon spaceflight", company_id: 8, destination_id: 4, price: 80_000_000, vehicle: 'Rocket', distance: 384_400, next_bookable_flight: 2025 },
+{ flight_name: "Mars spaceflight", company_id: 8, destination_id: 5, price: 100_000_000, vehicle: 'Rocket', distance: 250_000_000, next_bookable_flight: 2033 }])
