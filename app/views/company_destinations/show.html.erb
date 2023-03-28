@@ -78,14 +78,13 @@
       </button>
     </div>
     <div class="questions">
-    <h1 class="font-bold pb-6">
+    <h1 class="font-bold pb-4">
     <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
-      INTERESTED IN THIS FLIGHT? <br>
       SIGN UP FOR MORE INFORMATION <br>
       FROM VIRGIN GALACTIC
     <% else %>
-      INTERESTED IN THIS FLIGHT? <br>
-      SIGN UP FOR MORE INFORMATION
+      SIGN UP TO THE NEWSLETTER <br>
+      <button onclick=" window.open('http://eepurl.com/ibbdVL','_blank')" class="w-full btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500">Sign Up</button>
     <% end %>
     </h1>
 <!--     <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
@@ -95,12 +94,15 @@
       GET ANSWERS HERE ->
       <% end %>
     </button> -->
-    <%= render "leads/new" %>
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-info">
-        <p style="text-purple-500-400"><%= msg %></p>
-      </div>
-    <% end %>
+        <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+        <%= render "leads/new" %>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-info">
+            <p style="text-purple-500-400"><%= msg %></p>
+          </div>
+        <% end %>
+        <% else %>
+        <% end %>
     </div>
   </div>
 </div>
