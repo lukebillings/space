@@ -20,11 +20,11 @@ companies = Company.create([{ name: 'NA' },
     { name: 'NA' }])
 
 
-company_destinations = CompanyDestination.create([{ flight_name: "Stratosphere spaceflight",company_id: 1, destination_id: 1, price: 45_000, vehicle: 'Balloon', distance: 45, next_bookable_flight: 2024 },
+company_destinations = CompanyDestination.create([{ flight_name: "Stratosphere spaceflight",company_id: 1, destination_id: 1, price: 50_000, vehicle: 'Balloon', distance: 45, next_bookable_flight: 2024 },
 { flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 2, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2025},
 { flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 2, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2026},
 { flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 2, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2027},
-{ flight_name: "Sub-orbital spaceflight", company_id: 6, destination_id: 2, price: 1300_000, vehicle: 'Rocket', distance: 110, next_bookable_flight: 2024 },
-{ flight_name: "ISS spaceflight", company_id: 7, destination_id: 3, price: 45_000_000, vehicle: 'Rocket', distance: 408, next_bookable_flight: 2024  },
-{ flight_name: "Moon spaceflight", company_id: 8, destination_id: 4, price: 80_000_000, vehicle: 'Rocket', distance: 384_400, next_bookable_flight: 2025 },
-{ flight_name: "Mars spaceflight", company_id: 8, destination_id: 5, price: 100_000_000, vehicle: 'Rocket', distance: 250_000_000, next_bookable_flight: 2033 }])
+{ flight_name: "Sub-orbital spaceflight", company_id: 6, destination_id: 2, price: 1400_000, vehicle: 'Rocket', distance: 110, next_bookable_flight: 2024 },
+{ flight_name: "ISS spaceflight", company_id: 7, destination_id: 3, price: 55_000_000, vehicle: 'Rocket', distance: 408, next_bookable_flight: 2024  },
+{ flight_name: "Moon spaceflight", company_id: 8, destination_id: 4, price: 100_000_000, vehicle: 'Rocket', distance: 384_400, next_bookable_flight: 2025 },
+{ flight_name: "Mars spaceflight", company_id: 8, destination_id: 5, price: 500_000, vehicle: 'Rocket', distance: 250_000_000, next_bookable_flight: 2033 }])
