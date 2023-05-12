@@ -14,61 +14,95 @@
 
 
 <div class="flex flex-wrap" >
-  <div class="mt-20 mr-20 ml-20 text-white" style="width: 500px;">
+  <div class="mt-4 mr-20 ml-20 text-white" style="width: 560px;">
       <div class="image h-72 w-86">
      <% if @company_destination.id == 1 %>
      <%= image_tag "balloon.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 2 %>
-     <%= image_tag "earth.jpg", class: "w-screen h-60" %>
+     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 3 %>
-     <%= image_tag "meso.jpg", class: "w-screen h-60" %>
+     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 4 %>
-     <%= image_tag "meteors.jpg", class: "w-screen h-60" %>
+     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>s
      <% elsif @company_destination.id == 5 %>
-     <%= image_tag "aurora.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 6 %>
      <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 7 %>
+     <% elsif @company_destination.id == 6 %>
      <%= image_tag "iss.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 8 %>
+     <% elsif @company_destination.id == 7 %>
      <%= image_tag "moon.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 9 %>
+     <% elsif @company_destination.id == 8 %>
      <%= image_tag "mars.jpg", class: "w-screen h-60" %>
      <% end %>
         </div>
-  <ul class="mt-10">
+  <ul class="mt-12">
     <li> <%= @company_destination.flight_name%> </li>
     <li class="text-slate-400"> Company: <%= @company_destination.company.name%></li>
     <li class="text-slate-400"> Vehicle: <%= @company_destination.vehicle %> </li>
-    <li class="text-slate-400"> Next bookable flight: <%= @company_destination.next_bookable_flight %></li>
+    <li class="text-slate-400"> Scheduled Departure: <%= @company_destination.next_bookable_flight %></li>
     <li class="text-slate-400"> Starting from: $<%= @company_destination.price.to_s(:delimited) %></li>
     <li class="text-slate-400"> Distance from Earth: <%= @company_destination.distance.to_s(:delimited)%>km</li>
-<!--     <li class="text-slate-600"> companyurl.com</li> -->
   </ul>
-  <div class="intro border-t-2 pt-5 mt-5 ">
+
+  <div class="intro border-t-2 pt-5 mt-5">
     <h1 class="font-bold">FLIGHT INFO</h1><br>
-    <p>Discover more detailed information about the flight here.</p>
+<!-- info about v gal -->
+<% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4  %>
+  <%= render "shared/vgal" %>
+  <% else%>
+  <p>Please sign up to our Newsletter to recieve more information about flights to this destination and much more.</p>
+<% end %>
   </div>
-  <div class="intro border-t-2 pt-5 mt-5 ">
+  <div class="intro border-t-2 pt-5 mt-5 mb-5 ">
     <h1 class="font-bold">COMPANY INFO</h1><br>
-    <p>Find out more about the company operating the flight here.</p>
+    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+      <%= render "shared/vgalinfo" %>
+      <% else%>
+      <p>Please sign up to our Newsletter to recieve more information about companies flying to space.</p>
+    <% end %>
   </div>
 
   </div>
 
-
-  <div class="mt-20 ml-20 sm:mr-20 sm:ml-20 text-white">
+  <div class="mb-24 ml-20 sm:mr-20 sm:ml-20 text-white style=" style=" float: right;
+    max-height: calc(100vh - 152px);
+    max-width: 448px;
+    position: sticky;
+    top: 162px;">
     <div class="ready">
-      <h1 class="mb-10">READY TO GO?</h1>
-      <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-        RESERVE YOUR TRIP ->
+    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+    <% else %>
+<!--     <h1 class="mb-10">READY TO GO?</h1>
+    <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      RESERVE YOUR TRIP -> -->
+    <% end %>
       </button>
     </div>
-    <div class="questions pt-10">
-    <h1 class="mb-10">GOT QUESTIONS?</h1>
-    <button class="px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+    <div class="questions">
+    <h1 class="font-bold pb-4">
+    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+      SIGN UP FOR MORE INFORMATION <br>
+      FROM VIRGIN GALACTIC
+    <% else %>
+      SIGN UP TO THE NEWSLETTER <br>
+      <button onclick=" window.open('http://eepurl.com/ibbdVL','_blank')" class="w-full btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500">Sign Up</button>
+    <% end %>
+    </h1>
+<!--     <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      <% if @company_destination.id == 3 %>
+      LEAVE YOUR DETAILS ->
+      <% else %>
       GET ANSWERS HERE ->
-    </button>
+      <% end %>
+    </button> -->
+        <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+        <%= render "leads/new" %>
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-info">
+            <p style="text-purple-500-400"><%= msg %></p>
+          </div>
+        <% end %>
+        <% else %>
+        <% end %>
     </div>
   </div>
 </div>

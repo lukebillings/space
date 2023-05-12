@@ -14,6 +14,6 @@ class CompanyDestinationsController < ApplicationController
   end
   def show
     @company_destination = CompanyDestination.find(params[:id])
+    @lead = Lead.new
   end
 end
-

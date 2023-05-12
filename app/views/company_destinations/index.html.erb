@@ -11,7 +11,7 @@
       <div class="ml-10 mt-10 mr-10 flex flex-wrap justify-end ...">
         <%= f.input :destination, as: :select, label: false, collection:  Destination.all, include_blank: "💫 Destination", value_method: :id, onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :destination)%>
         <%= f.input :vehicle, as: :select, label: false, collection:  ['Balloon', 'Plane', 'Rocket'], include_blank: "🛸 Vehicle", onchange: "this.form.submit()", input_html: {class: "category-tag-filter filter-1 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :vehicle)%>
-        <%= f.input :price, as: :select, label: false, collection:  ["<$0.5M", "<$1M", "<$10M", "<$100M" ], include_blank: "＄Max Price", onchange: "this.form.submit()", input_html: { class: "category-tag-filter filter-2 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :price) %>
+        <%= f.input :price, as: :select, label: false, collection:  ["<$0.01M", "<$0.1M", "<$0.5M", "<$1M" ], include_blank: "＄Max Price", onchange: "this.form.submit()", input_html: { class: "category-tag-filter filter-2 m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" }, selected: params.dig(:filters, :price) %>
         <%= f.submit "Apply filter", class: "btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500" %>
       </div>
     <% end %>
@@ -25,25 +25,28 @@
         <% if company_destination.id == 1 %>
         <%= image_tag "balloon.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 2 %>
-        <%= image_tag "earth.jpg", class: "w-screen h-40" %>
+        <%= image_tag "VGAL-flight.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 3 %>
-        <%= image_tag "meso.jpg", class: "w-screen h-40" %>
+        <%= image_tag "vgal_space.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 4 %>
-        <%= image_tag "meteors.jpg", class: "w-screen h-40" %>
+        <%= image_tag "unity.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 5 %>
-        <%= image_tag "aurora.jpg", class: "w-screen h-40" %>
-        <% elsif company_destination.id == 6 %>
         <%= image_tag "thermo.jpg", class: "w-screen h-40" %>
-        <% elsif company_destination.id == 7 %>
+        <% elsif company_destination.id == 6 %>
         <%= image_tag "iss.jpg", class: "w-screen h-40" %>
-        <% elsif company_destination.id == 8 %>
+        <% elsif company_destination.id == 7 %>
         <%= image_tag "moon.jpg", class: "w-screen h-40" %>
-        <% elsif company_destination.id == 9 %>
+        <% elsif company_destination.id == 8 %>
         <%= image_tag "mars.jpg", class: "w-screen h-40" %>
         <% end %>
       </div>
-      <div class="tags pt-2 pr-2 flex justify-end ...">
-        <button class="m-2 py-1 px-2 text-pink-600 bg-purple-500 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+      <div class="tags pt-2 pr-2 relative flex justify-end ...">
+        <div class="company_logo">
+          <% if company_destination.company.id == 3 %>
+          <%= image_tag "VGAL-logo.png", class: "ml-4" %>
+          <% end %>
+        </div>
+        <button class="m-2 ml-8 py-1 px-2 text-pink-600 bg-pink-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
           <%= company_destination.destination.name %>
         </button>
       </div>
@@ -52,7 +55,7 @@
           <li> <%= company_destination.flight_name %></li>
           <li class="text-slate-400">Company: <%= company_destination.company.name %></li>
           <li class="text-slate-400"> Vehicle: <%= company_destination.vehicle %></li>
-          <li class="text-slate-400"> Next bookable flight: <%= company_destination.next_bookable_flight %></li>
+          <li class="text-slate-400"> Scheduled Departure: <%= company_destination.next_bookable_flight %></li>
           <li class="text-slate-400"> Starting from: $<%= company_destination.price.to_s(:delimited)  %></li>
         </ul>
       </div>
