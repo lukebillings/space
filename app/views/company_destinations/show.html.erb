@@ -48,7 +48,7 @@
   <div class="intro border-t-2 pt-5 mt-5">
     <h1 class="font-bold">FLIGHT INFO</h1><br>
 <!-- info about v gal -->
-<% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4  %>
+<% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5  %>
   <%= render "shared/vgal" %>
   <% else%>
   <p>Please sign up to our Newsletter to receive more information about flights to this destination and much more.</p>
@@ -56,7 +56,7 @@
   </div>
   <div class="intro border-t-2 pt-5 mt-5 mb-5 ">
     <h1 class="font-bold">COMPANY INFO</h1><br>
-    <% if @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+    <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
       <%= render "shared/vgalinfo" %>
       <% else%>
       <p>Please sign up to our Newsletter to receive more information about companies flying to space.</p>
