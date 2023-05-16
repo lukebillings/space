@@ -23,20 +23,22 @@
    <div class="company w-64 pb-4 bg-slate-900 mx-2 mb-8 rounded-lg shadow-lg hover:shadow-gray-700">
       <div class="image">
         <% if company_destination.id == 1 %>
-        <%= image_tag "balloon.jpg", class: "w-screen h-40" %>
+        <%= image_tag "trop.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 2 %>
-        <%= image_tag "VGAL-flight.jpg", class: "w-screen h-40" %>
+        <%= image_tag "balloon.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 3 %>
-        <%= image_tag "vgal_space.jpg", class: "w-screen h-40" %>
+        <%= image_tag "VGAL-flight.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 4 %>
-        <%= image_tag "unity.jpg", class: "w-screen h-40" %>
+        <%= image_tag "vgal_space.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 5 %>
-        <%= image_tag "thermo.jpg", class: "w-screen h-40" %>
+        <%= image_tag "unity.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 6 %>
-        <%= image_tag "iss.jpg", class: "w-screen h-40" %>
+        <%= image_tag "thermo.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 7 %>
-        <%= image_tag "moon.jpg", class: "w-screen h-40" %>
+        <%= image_tag "iss.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 8 %>
+        <%= image_tag "moon.jpg", class: "w-screen h-40" %>
+        <% elsif company_destination.id == 9 %>
         <%= image_tag "mars.jpg", class: "w-screen h-40" %>
         <% end %>
       </div>
