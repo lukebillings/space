@@ -16,8 +16,8 @@
 <div class="flex flex-wrap" >
   <div class="mt-4 mr-20 ml-20 text-white" style="width: 560px;">
       <div class="image h-72 w-86">
-     <% if @company_destination.id == 1 %>
-     <%= image_tag "trop.jpg", class: "w-screen h-60" %>
+     <% if @company_destination.id == 2 %>
+     <iframe width="100%" height="315" src="https://uploads-ssl.webflow.com/63edee4df2dc85208ed68d08/63ff64b10fd69112d411f84c_Video-transcode.webm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <% elsif @company_destination.id == 2 %>
      <%= image_tag "balloon.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 3 %>
@@ -50,6 +50,8 @@
 <!-- info about v gal -->
 <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5  %>
   <%= render "shared/vgal" %>
+<% elsif @company_destination.id == 2 %>
+<%= render "shared/halo" %>
   <% else%>
   <p>Please sign up to our Newsletter to receive more information about flights to this destination and much more.</p>
 <% end %>
@@ -58,6 +60,8 @@
     <h1 class="font-bold">COMPANY INFO</h1><br>
     <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
       <%= render "shared/vgalinfo" %>
+      <% elsif @company_destination.id == 2 %>
+      <%= render "shared/haloinfo" %>
       <% else%>
       <p>Please sign up to our Newsletter to receive more information about companies flying to space.</p>
     <% end %>
@@ -84,6 +88,10 @@
     <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
       SIGN UP FOR MORE INFORMATION <br>
       FROM VIRGIN GALACTIC
+    <% elsif @company_destination.id == 2 %>
+    FOR THE LATEST FROM HALO SPACE, <br>
+    INCLUDING WHEN DEPOSITS WILL OPEN <br>
+    PLEASE LEAVE YOUR DETAILS BELOW
     <% else %>
       SIGN UP TO THE NEWSLETTER <br>
       <button onclick=" window.open('http://eepurl.com/ibbdVL','_blank')" class="w-full btn btn-primary  btn-apply-filter m-2 py-2 px-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500">Sign Up</button>
@@ -96,7 +104,7 @@
       GET ANSWERS HERE ->
       <% end %>
     </button> -->
-        <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 %>
+        <% if @company_destination.id == 3 || @company_destination.id == 4 || @company_destination.id == 5 || @company_destination.id == 2 %>
         <%= render "leads/new" %>
         <% flash.each do |type, msg| %>
           <div class="alert alert-info">

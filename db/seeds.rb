@@ -11,7 +11,7 @@ destinations = Destination.create([{ name: 'Troposphere' }, { name: 'Stratospher
 
 
 companies = Company.create([{ name: 'NA' },
-    { name: 'NA' },
+    { name: 'HALO Space' },
     { name: 'Virgin Galactic' },
     { name: 'NA' },
     { name: 'NA' },
@@ -22,7 +22,7 @@ companies = Company.create([{ name: 'NA' },
 
 company_destinations = CompanyDestination.create([
   { flight_name: "Zero gravity flight", company_id: 1, destination_id: 1, price: 9_000, vehicle: 'Plane', distance: 9.0, next_bookable_flight: 2023 },
-  { flight_name: "Stratosphere spaceflight",company_id: 1, destination_id: 2, price: 50_000, vehicle: 'Balloon', distance: 45, next_bookable_flight: 2024 },
+  { flight_name: "HALO Space experience",company_id: 2, destination_id: 2, price: 200_000, vehicle: 'Balloon', distance: 35, next_bookable_flight: 2025 },
 { flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 3, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2025},
 { flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 3, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2026},
 { flight_name: "Virgin Galactic Spaceflight", company_id: 3, destination_id: 3, price: 450_000, vehicle: 'Plane', distance: 91.44, next_bookable_flight: 2027},

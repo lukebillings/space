@@ -25,7 +25,7 @@
         <% if company_destination.id == 1 %>
         <%= image_tag "trop.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 2 %>
-        <%= image_tag "balloon.jpg", class: "w-screen h-40" %>
+        <%= image_tag "halocover.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 3 %>
         <%= image_tag "VGAL-flight.jpg", class: "w-screen h-40" %>
         <% elsif company_destination.id == 4 %>
@@ -46,6 +46,8 @@
         <div class="company_logo">
           <% if company_destination.company.id == 3 %>
           <%= image_tag "VGAL-logo.png", class: "ml-4" %>
+          <% elsif company_destination.company.id == 2  %>
+          <%= image_tag "halospacewide.png", class: "ml-4 pt-3"  %>
           <% end %>
         </div>
         <button class="m-2 ml-8 py-1 px-2 text-pink-600 bg-pink-200 font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
