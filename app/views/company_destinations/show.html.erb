@@ -54,7 +54,7 @@
 <!-- info about v gal -->
 <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7  %>
   <%= render "shared/vgal" %>
-<% elsif @company_destination.id == 2 || company_destination.id == 3 || company_destination.id == 4 %>
+<% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
 <%= render "shared/halo" %>
   <% else%>
   <p>Please sign up to our Newsletter to receive more information about flights to this destination and much more.</p>
@@ -64,7 +64,7 @@
     <h1 class="font-bold">COMPANY INFO</h1><br>
     <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 %>
       <%= render "shared/vgalinfo" %>
-      <% elsif @company_destination.id == 2 || company_destination.id == 3 || company_destination.id == 4 %>
+      <% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
       <%= render "shared/haloinfo" %>
       <% else%>
       <p>Please sign up to our Newsletter to receive more information about companies flying to space.</p>
