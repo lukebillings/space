@@ -64,3 +64,5 @@ gem 'fa_rails', '~> 0.1.28'
 gem 'yt', '~> 0.32.0'
 
 gem 'cloudinary'
+
+gem 'font-awesome-rails'
