@@ -8,15 +8,18 @@
 </div>
 
 
-  <div class="cta mt-10 mb-40 md:mt-40">
-    <div class="px-6 cta_title text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-center py-12">
-      Find Spaceflights. <br>
-      Like Earthflights.
+  <div class="cta mt-10 mb-40">
+    <div class="px-20" style="position: absolute;">
+      <%= image_tag 'earth-homepage.jpg', alt: 'This is a background image' %>
     </div>
-    <div class="cta_text w-50 text-center pb-10 text-gray-300">
-    <p>Discover life changing spaceflights today.</p>
+    <div class="px-40 cta_title text-5xl font-extrabold text-white py-12", style="position: relative;">
+      Discover life changing<br>
+      Spaceflights
     </div>
-    <div class="lead flex items-center justify-center">
+    <div class="cta_text w-50 px-40 pb-10 text-gray-300 ", style="position: relative;">
+    <p>Travel to space for Leisure, Philanthropy or Reseach</p>
+    </div>
+    <div class="lead flex items-center px-40">
 <!--       <div class="">
         <input
           type="text"
@@ -42,7 +45,8 @@
         />
       </div> -->
       <div class="cta">
-        <%= link_to flights_path, class: "btn btn-primary  btn-apply-filter m-2 py-4 px-6 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500" do %>
+        <%= link_to flights_path, class: "btn btn-primary  btn-apply-filter m-2 py-4 px-6 bg-slate-900 text-black font-semibold rounded-lg shadow-md hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-white hover:from-pink-500 hover:to-yellow-500", style: "
+box-shadow: 0px 1px 26px 0px rgba(106, 146, 226, 0.96); position: relative;" do %>
           SEARCH NOW
         <% end %>
       </div>
