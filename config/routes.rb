@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get '/pandt', to: 'pages#pandt'
   get '/cookies', to: 'pages#cookies'
   get '/flights', to: 'company_destinations#index', as: :flights
+  get '/blog', to: 'pages#blog'
 end
