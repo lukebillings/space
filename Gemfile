@@ -68,3 +68,5 @@ gem 'cloudinary'
 gem 'font-awesome-rails'
 
 gem 'contentful'
+
+gem 'rich_text_renderer', '~> 0.2.1'

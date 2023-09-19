@@ -11,41 +11,45 @@
 </div>
 
 
-<div class=" m-20 text-white text-5xl font-bold ">
-  Your guide to Human Space Travel
+<div class=" m-20 text-white text-4xl ">
+  Your Guide To Human Space Travel
 </div>
 
 
-<div class="main-card text-white flex ml-10 mr-40">
-  <% product_cover = contentful.entries(content_type: '', include: 2).first %>
+<% blog_cover = contentful.entries(content_type: 'b', include: 2).first %>
+<%= link_to blog_path(blog_cover.slug) do %>
+<div class="main-card text-white flex ml-20 mr-40">
 
   <div class="image">
-  <%= image_tag "balloon.jpg", class: "w-100 h-100" %>
+  <%= image_tag "balloon.jpg", class: "w-100 h-100 rounded-lg" %>
   </div>
   <div>
-    <div class="pl-4">
+    <div class="pl-8">
       <div class="title text-2xl ">
-      <%= product_cover.title %>
+      <%= blog_cover.title %>
     </div>
     <div class="text-preview pt-8 max-w-md">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol
+      <%= @renderer.render(blog_cover.body).html_safe %>
+      <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol -->
     </div>
       </div>
     </div>
 </div>
+<% end %>
 
 
 <div class=" m-20 flex flex-wrap justify-around">
-<% products = contentful.entries(content_type: 'b', include: 2) %>
-<% products.drop(1).each do |product| %>
-<div class="card px-4">
-  <div class="image">
-      <%= image_tag "balloon.jpg", class: "w-80 h-40 contentful_product text-white pt-10 card text-white" %>
-  </div>
-  <div class="title text-white pt-8">
-    <%= product.title  %>
-  </div>
-</div>
+<% @blogs.drop(1).each do |blog| %>
+  <%= link_to blog_path(blog.slug) do %>
+        <div class="image rounded-lg">
+            <%= image_tag "balloon.jpg", class: "w-80 h-40 contentful_product text-white pt-10 card text-white rounded-lg" %>
+        </div>
+        <div class="text-white">
+          <%= blog.title  %>
+        </div>
+  <% end %>
 <% end %>
 </div>
+
+
 
