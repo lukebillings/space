@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :company_destinations, only: [:index, :show] do
     resources :leads, only: [:create]
   end
+  # resources :blogs, only: [:index, :show], path: 'blog'
   root to: 'pages#homepage'
   get '/companies', to: 'pages#info'
   get '/pandt', to: 'pages#pandt'

@@ -1,0 +1,43 @@
+<div class="logo mt-10">
+  <div>
+    <%= link_to root_path, class: "" do %>
+      <%= image_tag "logo.png", class: "w-24 h-24 ml-2 lg:ml-20" %>
+    <% end %>
+  </div>
+  <div class="flex flex-wrap justify-around">
+    <div>
+      <%= link_to companies_path, class: "mt-6 m-2 py-2 px-4 text-white font-semibold rounded-lg shadow-md border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 absolute right-10 top-10" do %>
+        List your spaceflight
+      <% end %>
+    </div>
+<!--     <div class="ml-24">
+      <%= link_to blogs_path, class: "mt-6  py-2 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 sm:absolute sm:right-72 sm:top-10" do %>
+        Blog
+      <% end %>
+    </div> -->
+  </div>
+</div>
+
+
+<!-- <%= link_to blogs_path, class: "back_button text-white" do %>
+  <p class="ml-20 mt-10"> <- Back to blog</p>
+<% end %> -->
+
+
+<div class="main-card text-white flex h-screen m-10">
+  <div class="mx-auto px-auto">
+    <div class="image pb-8">
+      <%= image_tag "balloon.jpg", class: "rounded-lg" %>
+    </div>
+    <div>
+      <div class="">
+        <div class="title text-2xl ">
+          <%= @blog.title %>
+        </div>
+        <div class="text-preview pt-8 max-w-2xl ">
+          <%= @renderer.render(@blog.body).html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
