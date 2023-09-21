@@ -1,146 +1,158 @@
+<!-- nav bar -->
+
 <div class="logo mt-10">
-  <%= link_to root_path, class: "" do %>
-    <%= image_tag "logo.png", class: "w-24 h-24 ml-2 lg:ml-20" %>
-  <% end %>
-  <%= link_to companies_path, class: "mt-6 m-2 py-2 px-4 text-white font-semibold rounded-lg shadow-md border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 absolute right-10 top-10" do %>
-    List your spaceflight
-  <% end %>
-    <%= link_to blogs_path, class: "mt-6 m-2 py-2 px-4 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 absolute right-72 top-10" do %>
-    Blog
-  <% end %>
+  <div>
+    <%= link_to root_path, class: "" do %>
+      <%= image_tag "logo.png", class: "w-24 h-24 ml-2 lg:ml-20" %>
+    <% end %>
+  </div>
+  <div class="flex flex-wrap justify-around">
+    <div>
+      <%= link_to companies_path, class: "mt-6 m-2 py-2 px-4 text-white font-semibold rounded-lg shadow-md border-solid border-2 border-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 absolute right-10 top-10" do %>
+        List your spaceflight
+      <% end %>
+    </div>
+    <div class="ml-24">
+      <%= link_to blogs_path, class: "mt-6  py-2 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 sm:absolute sm:right-72 sm:top-10" do %>
+        Blog
+      <% end %>
+    </div>
+  </div>
 </div>
 
+<!-- back to spaceflights btn -->
 
 <%= link_to flights_path, class: "back_button text-white" do %>
-  <p class="ml-20 mt-10"> <- Back to spaceflights</p>
+  <p class="ml-20 mr-10 mt-10"> <- Back to spaceflights </p>
 <% end %>
 
+<!-- content about the experience + company -->
 
-<div class="flex flex-wrap" >
-  <div class="mt-4 mr-20 ml-20 text-white" style="width: 560px;">
-      <div class="image h-72 w-86">
-     <% if @company_destination.id == 1 %>
+
+<div class="flex flex-wrap text-white mx-8 sm:max-w-2xl sm:ml-20">
+
+
+    <!-- video or image about the experience -->
+
+  <div class="mt-4 mr-8 ml-8 sm:mr-20 sm:ml-20 text-white" style="width: 560px;">
+    <div class="image h-72 w-86">
+     <% if @company_destination.id == 1%>
      <%= image_tag "trop.jpg", class: "w-screen h-60" %>
      <% elsif @company_destination.id == 2 %>
-     <iframe
-       src="https://player.cloudinary.com/embed/?public_id=ikvzlkeldu9dky8d6fy2&cloud_name=dt0dvqoeb"
-       width="100%"
-       height="315"
-       allow="autoplay; fullscreen; encrypted-media;"
-       frameborder="0"
-     ></iframe>
-     <% elsif @company_destination.id == 3 %>
-     <iframe
-       src="https://player.cloudinary.com/embed/?public_id=ikvzlkeldu9dky8d6fy2&cloud_name=dt0dvqoeb"
-       width="100%"
-       height="315"
-       allow="autoplay; fullscreen; encrypted-media;"
-       frameborder="0"
-     ></iframe>
-     <% elsif @company_destination.id == 4 %>
-     <iframe
-       src="https://player.cloudinary.com/embed/?public_id=ikvzlkeldu9dky8d6fy2&cloud_name=dt0dvqoeb"
-       width="100%"
-       height="315"
-       allow="autoplay; fullscreen; encrypted-media;"
-       frameborder="0"
-     ></iframe>
-     <% elsif @company_destination.id == 5 %>
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-     <% elsif @company_destination.id == 6 %>
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-     <% elsif @company_destination.id == 7 %>
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-     <% elsif @company_destination.id == 8 %>
-     <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 9 %>
-     <%= image_tag "iss.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 10 %>
-     <%= image_tag "moon.jpg", class: "w-screen h-60" %>
-     <% elsif @company_destination.id == 11 %>
-     <%= image_tag "mars.jpg", class: "w-screen h-60" %>
-     <% end %>
-        </div>
-  <ul class="mt-12">
-    <li> <%= @company_destination.flight_name%> </li>
-    <li class="text-slate-400"> Company: <%= @company_destination.company.name%></li>
-    <li class="text-slate-400"> Vehicle: <%= @company_destination.vehicle %> </li>
-    <li class="text-slate-400"> Scheduled Departure: <%= @company_destination.next_bookable_flight %></li>
-    <li class="text-slate-400"> Starting from: $<%= @company_destination.price.to_s(:delimited) %></li>
-    <li class="text-slate-400"> Distance from Earth: <%= @company_destination.distance.to_s(:delimited)%>km</li>
-  </ul>
-
-  <div class="intro border-t-2 pt-5 mt-5">
-    <h1 class="font-bold">FLIGHT INFO</h1><br>
-<!-- info about v gal -->
-<% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7  %>
-  <%= render "shared/vgal" %>
-<% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
-<%= render "shared/halo" %>
-  <% else%>
-  <p>Please sign up to our Newsletter to receive more information about flights to this destination and much more.</p>
-<% end %>
-  </div>
-  <div class="intro border-t-2 pt-5 mt-5 mb-5 ">
-    <h1 class="font-bold">COMPANY INFO</h1><br>
-    <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 %>
-      <%= render "shared/vgalinfo" %>
-      <% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
-      <%= render "shared/haloinfo" %>
-      <% else%>
-      <p>Please sign up to our Newsletter to receive more information about companies flying to space.</p>
-    <% end %>
-  </div>
-
-  </div>
-
-  <div class="mb-24 ml-20 sm:mr-20 sm:ml-20 text-white style=" style=" float: right;
-    max-height: calc(100vh - 152px);
-    max-width: 448px;
-    position: sticky;
-    top: 162px;">
-    <div class="ready">
-    <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 %>
-    <% else %>
-<!--     <h1 class="mb-10">READY TO GO?</h1>
-    <button class="px-4 mr-2 mt-2 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-      RESERVE YOUR TRIP -> -->
-    <% end %>
-      </button>
+       <iframe
+         src="https://player.cloudinary.com/embed/?public_id=ikvzlkeldu9dky8d6fy2&cloud_name=dt0dvqoeb"
+         width="100%"
+         height="315"
+         allow="autoplay; fullscreen; encrypted-media;"
+         frameborder="0"
+       ></iframe>
+       <% elsif @company_destination.id == 3 %>
+       <iframe
+         src="https://player.cloudinary.com/embed/?public_id=ikvzlkeldu9dky8d6fy2&cloud_name=dt0dvqoeb"
+         width="100%"
+         height="315"
+         allow="autoplay; fullscreen; encrypted-media;"
+         frameborder="0"
+       ></iframe>
+       <% elsif @company_destination.id == 4 %>
+       <iframe
+         src="https://player.cloudinary.com/embed/?public_id=ikvzlkeldu9dky8d6fy2&cloud_name=dt0dvqoeb"
+         width="100%"
+         height="315"
+         allow="autoplay; fullscreen; encrypted-media;"
+         frameborder="0"
+       ></iframe>
+       <% elsif @company_destination.id == 5 %>
+       <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       <% elsif @company_destination.id == 6 %>
+       <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       <% elsif @company_destination.id == 7 %>
+       <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZPrB3WvnZpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       <% elsif @company_destination.id == 8 %>
+       <%= image_tag "thermo.jpg", class: "w-screen h-60" %>
+       <% elsif @company_destination.id == 9 %>
+       <%= image_tag "iss.jpg", class: "w-screen h-60" %>
+       <% elsif @company_destination.id == 10 %>
+       <%= image_tag "moon.jpg", class: "w-screen h-60" %>
+       <% elsif @company_destination.id == 11 %>
+       <%= image_tag "mars.jpg", class: "w-screen h-60" %>
+       <% end %>
     </div>
-    <div class="questions">
-    <h1 class="font-bold pb-4">
-    <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 %>
-      SIGN UP FOR MORE INFORMATION <br>
-      FROM VIRGIN GALACTIC
-    <% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
-    FOR THE LATEST FROM HALO SPACE, <br>
-    INCLUDING WHEN DEPOSITS WILL OPEN <br>
-    PLEASE LEAVE YOUR DETAILS BELOW
-    <% else %>
-      SIGN UP TO THE NEWSLETTER <br>
-      <div class="cta-button">
-        <button onclick=" window.open('http://eepurl.com/ibbdVL  ','_blank')" class="btn btn-primary w-full  btn-apply-filter m-2 py-4 px-6 bg-slate-900 text-black font-semibold rounded-lg shadow-md hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-white hover:from-pink-500 hover:to-yellow-500", style="
-  box-shadow: 0px 1px 26px 0px rgba(106, 146, 226, 0.96);">Sign Up -> </button>
-      </div>
-    <% end %>
-    </h1>
-<!--     <button class="px-4 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-      <% if @company_destination.id == 3 %>
-      LEAVE YOUR DETAILS ->
-      <% else %>
-      GET ANSWERS HERE ->
+  </div>
+
+    <!-- list of experience features -->
+
+    <ul class="mt-12">
+      <li> <%= @company_destination.flight_name%> </li>
+      <li class="text-slate-400"> Company: <%= @company_destination.company.name%></li>
+      <li class="text-slate-400"> Vehicle: <%= @company_destination.vehicle %> </li>
+      <li class="text-slate-400"> Scheduled Departure: <%= @company_destination.next_bookable_flight %></li>
+      <li class="text-slate-400"> Starting from: $<%= @company_destination.price.to_s(:delimited) %></li>
+      <li class="text-slate-400"> Distance from Earth: <%= @company_destination.distance.to_s(:delimited)%>km</li>
+    </ul>
+
+
+
+    <!-- flight information area -->
+
+     <div class="intro border-t-2 pt-5 mt-5">
+      <h1 class="font-bold">FLIGHT INFORMATION</h1><br>
+      <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7  %>
+        <%= render "shared/vgal" %>
+      <% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+        <%= render "shared/halo" %>
+      <% else%>
+        <p>Please sign up to our Newsletter to receive more information about flights to this destination and much more.</p>
       <% end %>
-    </button> -->
-        <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 || @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
-        <%= render "leads/new" %>
-        <% flash.each do |type, msg| %>
-          <div class="alert alert-info">
-            <p style="text-purple-500-400"><%= msg %></p>
+      </div>
+
+
+      <!-- company information area -->
+
+
+      <div class="intro-company border-t-2 pt-5 mt-5 mb-8 ">
+      <h1 class="font-bold">COMPANY INFORMATION</h1><br>
+      <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 %>
+        <%= render "shared/vgalinfo" %>
+      <% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+        <%= render "shared/haloinfo" %>
+      <% else%>
+        <p>Please sign up to our Newsletter to receive more information about companies flying to space.</p>
+      <% end %>
+      </div>
+
+
+      <!-- lead form -->
+
+<div class="lead-form mx-auto sm:mx-2">
+    <div class="text-white font-bold pb-4">
+      <h1>
+        <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 %>
+        SIGN UP FOR MORE INFORMATION <br>
+        FROM VIRGIN GALACTIC
+        <% elsif @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+          FOR THE LATEST FROM HALO SPACE, <br>
+          INCLUDING WHEN DEPOSITS WILL OPEN <br>
+          PLEASE LEAVE YOUR DETAILS BELOW
+        <% else %>
+          SIGN UP TO THE NEWSLETTER <br>
+          <div class="cta-button">
+            <button onclick=" window.open('http://eepurl.com/ibbdVL  ','_blank')" class="btn btn-primary w-full  btn-apply-filter m-2 py-4 px-6 bg-slate-900 text-black font-semibold rounded-lg shadow-md hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-white hover:from-pink-500 hover:to-yellow-500", style="box-shadow: 0px 1px 26px 0px rgba(106, 146, 226, 0.96);"> Sign Up -> </button>
           </div>
         <% end %>
-        <% else %>
+        </h1>
+      </div>
+
+
+      <% if @company_destination.id == 5 || @company_destination.id == 6 || @company_destination.id == 7 || @company_destination.id == 2 || @company_destination.id == 3 || @company_destination.id == 4 %>
+        <%= render "leads/new" %>
+        <% flash.each do |type, msg| %>
+        <div class="alert alert-info">
+          <p style="text-purple-500-400"><%= msg %></p>
+        </div>
         <% end %>
+      <% end %>
     </div>
-  </div>
+
+
 </div>

@@ -1,83 +1,65 @@
-
-<!-- <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm">
+<div class="p-6 rounded-lg shadow-lg bg-slate-900 float-right mr-10">
   <%= simple_form_for [@company_destination, @lead]  do |f| %>
-    <%= f.input :email, :label => 'Email address'%>
-    <%= f.input :name, :label => 'Full name' %>
-    <%= f.input :date, :label => 'What year would you like to go?' %>
-    <%= f.input :newsletter, :label => 'Yes please' %>
-    <%= f.input :pptc, :label => 'I agree' %>
-    <%= f.submit "Add",  class: "btn btn-primary mb-2"%>
-  <% end %>
-</div>
- -->
-
-
-
-
-       <div class="block p-6 rounded-lg shadow-lg bg-slate-900 max-w-sm sm:m-0 mr-8">
-        <%= simple_form_for [@company_destination, @lead]  do |f| %>
-            <div class="form-group mb-2">
-                <%= f.input :email, :label => 'Email address', input_html: { class: "form-input block
-                mt-2
-                w-full
-                px-3
-                py-1
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" }%>
-            </div>
-            <div class="form-group mb-2">
+    <div class="form-group mb-2">
+      <%= f.input :email, :label => 'Email address', input_html: { class: "form-input block
+      mt-2
+      w-full
+      px-3
+      py-1
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" }%>
+    </div>
+    <div class="form-group mb-2">
       <%= f.input :name, :label => 'Full name', input_html: { class: "form-input block
-                mt-2
-                w-full
-                px-3
-                py-1
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" } %>
+      mt-2
+      w-full
+      px-3
+      py-1
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" } %>
+    </div>
+    <div class="form-group mb-2">
+      <%= f.input :date, :label => 'What year would you like to go', input_html: { class: "form-input block
+      mt-2
+      w-full
+      px-3
+      py-1
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" }%>
+      </div>
+      <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Sign up for Spaceflight Index Newsletter?</label>
+      <div class="form-group form-check mb-2">
+        <%= f.input :newsletter, :label => 'Yes please', input_html: { class: "form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" }%>
+       </div>
+       <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Please agree to <a href="https://spaceflightindex.com/pandt">Privacy Policy and Terms</a></label>
+        <div class="form-group form-check mb-2">
+        <%= f.input :pptc, :label => 'I agree', input_html: { class: "form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" } %>
             </div>
-            <div class="form-group mb-2">
-  <%= f.input :date, :label => 'What year would you like to go', input_html: { class: "form-input block
-                mt-2
-                w-full
-                px-3
-                py-1
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", style: "color:black;" }%>
-            </div>
-
-            <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Sign up for Spaceflight Index Newsletter?</label>
-            <div class="form-group form-check mb-2">
-              <%= f.input :newsletter, :label => 'Yes please', input_html: { class: "form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" }%>
-            </div>
-
-            <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-white-700">Please agree to <a href="https://spaceflightindex.com/pandt">Privacy Policy and Terms</a></label>
-            <div class="form-group form-check mb-2">
-              <%= f.input :pptc, :label => 'I agree', input_html: { class: "form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" } %>
-            </div>
-            <%= f.submit "Submit",  class: "btn btn-primary mb-2 px-6
+        <%= f.submit "Submit",  class: "btn btn-primary mb-2 px-6
         py-2.5
         bg-white
         text-black
@@ -93,5 +75,5 @@
         duration-150
         ease-in-out
         hover:bg-slate-300", style: "box-shadow: 0px 1px 26px 0px rgba(106, 146, 226, 0.96)"%>
-              <% end %>
-        </div>
+  <% end %>
+</div>
