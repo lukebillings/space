@@ -38,7 +38,7 @@
     <div>
       <div class="">
         <div class="text-preview pt-8 max-w-2xl mx-auto">
-          <%= @renderer.render(@blog.body).html_safe %>
+            <%= raw @renderer.render(@blog.body).gsub("\n", "<br>") %>
         </div>
       </div>
     </div>
