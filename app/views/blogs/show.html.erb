@@ -10,34 +10,57 @@
         List your spaceflight
       <% end %>
     </div>
-<!--     <div class="ml-24">
+       <div class="ml-24">
       <%= link_to blogs_path, class: "mt-6  py-2 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 sm:absolute sm:right-72 sm:top-10" do %>
         Blog
       <% end %>
-    </div> -->
+    </div>
   </div>
 </div>
 
 
-<!-- <%= link_to blogs_path, class: "back_button text-white" do %>
+  <%= link_to blogs_path, class: "back_button text-white" do %>
   <p class="ml-20 mt-10"> <- Back to blog</p>
 <% end %> -->
 
+<div class="m-10">
 
-<div class="main-card text-white flex h-screen m-10">
+
+<div class="main-card text-white flex mb-20">
   <div class="mx-auto px-auto">
+    <div class="title text-2xl pb-8">
+      <%= @blog.title %>
+    </div>
     <div class="image pb-8">
-      <%= image_tag "balloon.jpg", class: "rounded-lg" %>
+      <% cover_image_url = @blog.cover.try(:url) %>
+        <%= image_tag cover_image_url, class: "rounded-lg", height: "300", width: "600" %>
     </div>
     <div>
       <div class="">
-        <div class="title text-2xl ">
-          <%= @blog.title %>
-        </div>
-        <div class="text-preview pt-8 max-w-2xl ">
+        <div class="text-preview pt-8 max-w-2xl mx-auto">
           <%= @renderer.render(@blog.body).html_safe %>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+
+    <div class="company-benefits bg-slate-900 p-10 rounded-lg max-w-2xl mx-auto">
+    <div class="company-benefits-title text-white text-l pb-4 font-bold">
+      Discover life changing space experiences inclduing;
+    </div>
+    <div class="company-benefits-list text-white pb-4">
+      <ul>
+        <li>- Subortial spaceflights </li>
+        <li>- Stratospheric spaceflights</li>
+      </ul>
+    </div>
+      <div class="cta-button">
+        <button onclick=" window.open('/flights  ','_blank')" class="btn btn-primary  btn-apply-filter m-2 py-4 px-6 bg-slate-900 text-black font-semibold rounded-lg shadow-md hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 bg-white hover:from-pink-500 hover:to-yellow-500", style="
+  box-shadow: 0px 1px 26px 0px rgba(106, 146, 226, 0.96);">SEARCH NOW-> </button>
+      </div>
+    </div>
+
+
 </div>
