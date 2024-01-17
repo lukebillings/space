@@ -19,28 +19,26 @@
 </div>
 
 
-<div class=" m-10 sm:m-20 text-white text-4xl ">
+<div class=" m-10 sm:m-20 text-white text-4xl font-bold ">
   Your Guide To Human Space Travel
 </div>
 
 
-<% blog_cover = contentful.entries(content_type: '', include: 2).first %>
+<% blog_cover = contentful.entries(content_type: 'b', include: 2).first %>
 <%= link_to blog_path(blog_cover.slug) do %>
-<div class="main-card text-white flex ml-20 mr-40 sm:flex hidden">
-
-  <div class="image">
-  <%= image_tag "balloon.jpg", class: "w-100 h-100 rounded-lg" %>
+<div class="main-card text-white m-10 md:flex">
+  <div class="image pb-8 ">
+    <% cover_image_url = blog_cover.cover.try(:url) %>
+      <%= image_tag cover_image_url, class: "rounded-lg", height: "300", width: "600"%>
   </div>
-  <div>
-    <div class="pl-8">
-      <div class="title text-2xl ">
+  <div class="blog-overview-text md:ml-8">
+    <div class="title text-2xl max-w-md ">
       <%= blog_cover.title %>
     </div>
     <div class="text-preview pt-8 max-w-md">
       <%= @renderer.render(blog_cover.body).truncate(150, separator: ' ').html_safe%>
     </div>
-      </div>
-    </div>
+  </div>
 </div>
 <% end %>
 
