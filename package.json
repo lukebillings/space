@@ -19,3 +19,13 @@
     "webpack-dev-server": "^3"
   }
 }
+
+
+"scripts": {
+    "start": "node index.js"  // Replace `index.js` with your main entry point
+}
+
+
+"engines": {
+    "node": "16.x"  // Or another compatible version
+}
