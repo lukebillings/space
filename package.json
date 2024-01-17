@@ -19,8 +19,6 @@
     "webpack-dev-server": "^3"
   },
   "engines": {
-      "node": "16.x"  // Or another compatible version
+      "node": "16"  // Or another compatible version
   }
 }
-
-
