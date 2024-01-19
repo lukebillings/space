@@ -5,8 +5,8 @@
 <% content_for :meta_tags do %>
   <!-- Specific meta tags for this blog post -->
   <meta property="og:title" content="<%= @blog.title %>" />
-  <meta property="og:url" content="<%= @blog.url %>" />
-  <meta property="og:image" content="<%= @blog.cover.url %>" />
+  <meta property="og:url" content="<%= url_for(@blog) %>" />
+  <meta property="og:image" content="<%= url_for(@blog.cover) %>" />
   <meta property="og:description" content="<%= @blog.body %>" />
 <% end %>
 
