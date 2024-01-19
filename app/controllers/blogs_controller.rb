@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
                      description: @blog.meta_description,
                      type: 'article',
                      url: blog_url(@blog),
-                     image: @blog.cover_image_url
+                     image: @blog.cover.url
                    }
   end
 end

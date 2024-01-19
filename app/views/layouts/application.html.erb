@@ -26,6 +26,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
+
+<%= display_meta_tags %>
+
 <!--     meta data -->
     <%# <title><%= meta_title</title> %> %>
     <meta name="description" content="<%= meta_description %>">
@@ -47,8 +50,6 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
 
-    <%# if on blog pages %>
-    <%= yield :meta_tags %>
 
   </head>
 
