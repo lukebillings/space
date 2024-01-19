@@ -3,6 +3,7 @@
                  keywords: 'space',
                  og: {
                    title: @blog.title,
+                   url: blog_url(@blog),
                    description: @blog.body.truncate(160),
                    image: @blog.cover.url
                  } %>
