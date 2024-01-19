@@ -1,4 +1,4 @@
-<% set_meta_tags title: @blog.title,
+<%# <% set_meta_tags title: @blog.title,
                  description: @blog.body.truncate(160),
                  keywords: 'space',
                  og: {
@@ -6,7 +6,7 @@
                    url: blog_url(@blog),
                    description: @blog.body.truncate(160),
                    image: @blog.cover.url
-                 } %>
+                 } %> %>
 
 <div class="logo mt-10">
   <div>
