@@ -14,22 +14,25 @@ class BlogsController < ApplicationController
     @blog = contentful.entries(content_type: 'b', include: 10, 'fields.slug[match]' => params[:id]).first
     @renderer = RichTextRenderer::Renderer.new
     body_text = extract_text_from_contentful_body(@blog.body)
-    set_meta_tags title: @blog.title,
-                    description: truncate_text(body_text, 160),
-                    keywords: 'space',
-                    og: {
-                      title: @blog.title,
-                      url: blog_url(@blog),
-                      description: truncate_text(body_text, 160),
-                      image: @blog.cover.try(:url)
-                    }
-                    card: "summary_large_image",  # Specify the card type
-                    site: "@SpaceflightIDX",  # Your Twitter account
-                    title: @blog.title,
-                    description: truncate_text(body_text, 200),  # Twitter limits description to 200 characters
-                    image: @blog.cover.try(:url)
-  end
 
+    set_meta_tags(
+      title: @blog.title,
+      description: truncate_text(body_text, 200),  # Twitter limits description to 200 characters
+      keywords: 'space',
+      og: {
+        title: @blog.title,
+        description: truncate_text(body_text, 200),  # Specify the OG description here
+        image: @blog.cover.try(:url)
+      },
+      twitter: {
+        card: "summary_large_image",  # Specify the card type
+        site: "@SpaceflightIDX",  # Your Twitter account
+        title: @blog.title,
+        description: truncate_text(body_text, 200),  # Twitter limits description to 200 characters
+        image: @blog.cover.try(:url)
+      }
+    )
+  end
 
 
   private
