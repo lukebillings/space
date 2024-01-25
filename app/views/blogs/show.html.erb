@@ -1,12 +1,8 @@
-<%# <% set_meta_tags title: @blog.title,
-                 description: @blog.body.truncate(160),
-                 keywords: 'space',
-                 og: {
-                   title: @blog.title,
-                   url: blog_url(@blog),
-                   description: @blog.body.truncate(160),
-                   image: @blog.cover.url
-                 } %> %>
+<% content_for :head do %>
+  <%= display_meta_tags %>
+<% end %>
+
+
 
 <div class="logo mt-10">
   <div>
