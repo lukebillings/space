@@ -23,6 +23,11 @@ class BlogsController < ApplicationController
                       description: truncate_text(body_text, 160),
                       image: @blog.cover.try(:url)
                     }
+                    card: "summary_large_image",  # Specify the card type
+                    site: "@SpaceflightIDX",  # Your Twitter account
+                    title: @blog.title,
+                    description: truncate_text(body_text, 200),  # Twitter limits description to 200 characters
+                    image: @blog.cover.try(:url)
   end
 
 
