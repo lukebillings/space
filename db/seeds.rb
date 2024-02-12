@@ -21,7 +21,7 @@ companies = Company.create([{ name: 'NA' },
 
 
 company_destinations = CompanyDestination.create([
-  { flight_name: "Zero gravity flight", company_id: 1, destination_id: 1, price: 9_000, vehicle: 'Plane', distance: 9.0, next_bookable_flight: 2023 },
+  { flight_name: "Zero gravity flight", company_id: 1, destination_id: 1, price: 9_000, vehicle: 'Plane', distance: 9.0, next_bookable_flight: 2024 },
   { flight_name: "HALO Space Experience",company_id: 2, destination_id: 2, price: 200_000, vehicle: 'Balloon', distance: 35, next_bookable_flight: 2025 },
   { flight_name: "HALO Space Experience",company_id: 2, destination_id: 2, price: 200_000, vehicle: 'Balloon', distance: 35, next_bookable_flight: 2026 },
   { flight_name: "HALO Space Experience",company_id: 2, destination_id: 2, price: 200_000, vehicle: 'Balloon', distance: 35, next_bookable_flight: 2027 },
