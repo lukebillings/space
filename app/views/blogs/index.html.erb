@@ -44,13 +44,14 @@
 
 
 
-<div class=" m-10 sm:m-20 flex flex-wrap justify-around">
+<div class=" m-10 sm:m-20 flex flex-wrap">
 <% @blogs.drop(1).each do |blog| %>
   <%= link_to blog_path(blog.slug) do %>
         <div class="image rounded-lg">
-            <%= image_tag "balloon.jpg", class: "w-80 h-40 contentful_product text-white pt-10 card text-white rounded-lg" %>
+          <% cover_image_url = blog.cover.try(:url) %>
+            <%= image_tag cover_image_url, class: "rounded-lg", height: "150", width: "300" %>
         </div>
-        <div class="text-white">
+        <div class="text-white max-w-xs">
           <%= blog.title  %>
         </div>
   <% end %>
